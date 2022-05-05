@@ -38,23 +38,23 @@ $morse_dict = {
   '-----' => '0'
 }
 
-def decode_char(morse)
-  $morse_dict[morse].upcase
+def decode_char(char)
+  $morse_dict[char].upcase
 end
 
 def decode_word(word)
   result = ''
 
-  word.split(/ /).each do |w|
-    result += decode_char(w)
+  word.split(/ /).each do |letter|
+    result += decode_char(letter)
   end
   result
 end
 
 def decode(sentence)
   result = ''
-  sentence.split(/   /).each do |w|
-    result += " #{decode_word(w)}"
+  sentence.split(/   /).each do |word|
+    result += " #{decode_word(word)}"
   end
   result.strip
 end
