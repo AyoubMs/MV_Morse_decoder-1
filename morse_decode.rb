@@ -39,7 +39,7 @@ MORSE_DICT = {
 }.freeze
 
 def decode_char(char, dict: MORSE_DICT)
-  dict[char].upcase
+  dict[char] ? dict[char].upcase : ''
 end
 
 def decode_word(word)
