@@ -1,4 +1,4 @@
-$morse_dict = {
+MORSE_DICT = {
   '.-' => 'a',
   '-...' => 'b',
   '-.-.' => 'c',
@@ -36,10 +36,10 @@ $morse_dict = {
   '---..' => '8',
   '----.' => '9',
   '-----' => '0'
-}
+}.freeze
 
-def decode_char(char)
-  $morse_dict[char].upcase
+def decode_char(char, dict: MORSE_DICT)
+  dict[char].upcase
 end
 
 def decode_word(word)
