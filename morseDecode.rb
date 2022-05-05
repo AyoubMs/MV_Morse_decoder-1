@@ -50,3 +50,11 @@ def decode_word(word)
   end
   result
 end
+
+def decode(sentence)
+  result = ''
+  sentence.split(/   /).each do |w|
+    result += " #{decode_word(w)}"
+  end
+  result.strip
+end
