@@ -4,3 +4,12 @@ def decode_char(morse)
 
   morse_dict[morse].upcase
 end
+
+def decode_word(word)
+  result = ''
+
+  word.split(/ /).each { |w|
+    result += decode_char(w)
+  }
+  return result
+end
